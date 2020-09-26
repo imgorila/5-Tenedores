@@ -24,7 +24,7 @@ export default function AccountStack(){
                       fontWeight:"bold",
                 },
             }}
-        />
+        /> 
         <Stack.Screen
             name="login"
             component={Login}
