@@ -8,6 +8,7 @@ import FavoritesStack from "./FavoritesStack";
 import AccountStack from "./AccountStack";
 import SearchStack from "./SearchStack"
 import TopRestaurantStack from "./TopRestaurantStack";
+import IntroStack from "./IntroStack";
 
 const Tab= createBottomTabNavigator();
 
@@ -16,8 +17,9 @@ export default function Navigation () {
 
     return(
             <NavigationContainer>
+                
                 <Tab.Navigator
-                    initialRouteName="account"
+                    initialRouteName="intro"
                     tabBarOptions={{
                         inactiveTintColor: "#646464",
                         activeTintColor: "#00A680",
@@ -31,6 +33,14 @@ export default function Navigation () {
                         tabBarIcon: ({ color }) => screenOptions(route, color),
                     })}        
                 >
+                    <Tab.Screen
+                        name="intro"
+                        component={IntroStack}
+                        options={{
+                            tabBarButton: () => null,
+                            tabBarVisible: false, // if you don't want to see the tab bar
+                        }}
+                    />
                     <Tab.Screen 
                         name="restaurants" 
                         component={RestaurantStack}
