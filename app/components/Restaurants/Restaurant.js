@@ -4,6 +4,8 @@ import {Rating, ListItem, Icon} from "react-native-elements";
 import {useFocusEffect} from "@react-navigation/native";
 import Toast from "react-native-easy-toast";
 import {map} from "lodash";
+import {useFonts} from "expo-font";
+
 import {firebaseApp} from "../../utils/firebase";
 import firebase from "firebase/app";
 import "firebase/firestore";
@@ -25,16 +27,6 @@ export default function Restaurant(props) {
     const toastRef = useRef();
 
     navigation.setOptions({ title: name,
-        // headerRight: () => (
-        //     <Icon
-        //             type="material-community"
-        //             name="tag-heart-outline"
-        //             onPress={() => (console.log("Add favorites"))}
-        //             color="#00A680"
-        //             size={27.5}
-        //             underlayColor="transparent"
-        //     />
-        //   ),
     });
 
     firebase.auth().onAuthStateChanged((user) =>{
